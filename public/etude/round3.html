@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Handbook étude — Round 3 · the ink &amp; ground lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+/* TX-02 Berkeley Mono — LT-02 Developer Font License № PQW5-83L6-6VW1-MKMN (the founder's). Face pairing RULED 2026-10-19 (ADR-0047 It-5): TX-02 titles / SS4 body, cell-2 elements kept whole. */
+:root{--paper:#f4f1ea;--ink:#1c1915;--mut:#6f6a5d;--rule:#ddd6c6;--card:#fffdf8;--tx:'Berkeley Mono',ui-monospace,monospace;--gall:#1f3a93;--gall-soft:#e8edf8}
+[data-theme=night]{--paper:#14161d;--ink:#e8e6df;--mut:#9aa0ad;--rule:#2b2f3a;--card:#1a1d26;--gall:#8fa4e8;--gall-soft:#1d2435}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 'Source Serif 4',Georgia,serif;transition:background .25s,color .25s}
+.mast{background:#17140f;color:#f3efe6;text-align:center;padding:2.4rem 1.25rem 1.5rem}
+[data-theme=night] .mast{background:#0b0d12}
+.mast h1{margin:0;font-family:var(--tx);font-weight:700;font-size:1.9rem}
+.mast p{margin:.5rem 0 0;color:#bdb5a4;font-size:.9rem}
+.nav{position:sticky;top:0;z-index:9;background:#221e17;display:flex;justify-content:center;gap:.2rem;flex-wrap:wrap;padding:.4rem 1rem}
+[data-theme=night] .nav{background:#11131a}
+.nav a{color:#cfc7b4;text-decoration:none;font-family:var(--tx);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;padding:.55rem .9rem}
+.nav button{margin-left:1rem;background:none;border:1px solid #555;border-radius:999px;color:#cfc7b4;font-family:var(--tx);font-size:.72rem;padding:.3rem .9rem;cursor:pointer}
+.sheet{max-width:68rem;margin:0 auto;padding:2.2rem 1.25rem 5rem}
+.verdict-box{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:1rem 1.3rem;margin-bottom:1rem;font-size:.95rem}
+.verdict-box .k{font-family:var(--tx);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.verdict-box blockquote{margin:.4rem 0 0;font-style:italic}
+.rec{border-left:4px solid var(--gall);background:var(--gall-soft);border-radius:0 10px 10px 0;padding:1rem 1.3rem;margin:0 0 2rem;font-size:.95rem}
+.rec .k{font-family:var(--tx);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gall)}
+.rec .sig{font-style:italic;color:var(--mut);font-size:.88rem}
+h2.sec{font-family:var(--tx);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--rule);padding-bottom:.4rem;margin:2.4rem 0 1.1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem}
+.cell{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:1.1rem 1.2rem;--a:#1f3a93;--a-soft:rgba(31,58,147,.1)}
+.cell .tag{display:flex;justify-content:space-between;font-family:var(--tx);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin-bottom:.5rem}
+.cell .spine{font-family:var(--tx);font-weight:700;font-size:1.3rem;color:var(--a);border-top:3px solid var(--a);padding-top:.6rem}
+.cell .sub{font-style:italic;color:var(--mut);font-size:.85rem;margin:.25rem 0 .6rem}
+.cell .tgl{font-size:.92rem}
+.cell .tgl b{color:var(--a)}
+.cell .tgl a{color:var(--a)}
+.cell .code{font-family:var(--tx);font-size:.76rem;background:var(--a-soft);border-left:3px solid var(--a);padding:.5rem .7rem;margin:.6rem 0;overflow-x:auto;white-space:nowrap}
+.cell .med{border-top:1px dashed var(--rule);margin-top:.6rem;padding-top:.5rem;font-size:.8rem;color:var(--mut);font-style:italic}
+.grounds{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.g{border:1px solid var(--rule);border-radius:12px;padding:1rem;text-align:center}
+.g .spine{font-family:var(--tx);font-weight:700;font-size:1.05rem;color:#1f3a93}
+.g p{font-size:.82rem;margin:.4rem 0 0}
+.g .hx{font-family:var(--tx);font-size:.66rem;color:#888;display:block;margin-top:.4rem}
+.foot{margin-top:2.5rem;font-size:.82rem;color:var(--mut);border-top:1px dashed var(--rule);padding-top:.7rem}
+.foot a{color:var(--gall)}
+</style>
+</head>
+<body>
+<div class="mast"><h1>THE HANDBOOK — ROUND 3</h1><p>the ink &amp; ground lab · face pairing ruled and frozen; only color moves now</p></div>
+<div class="nav"><a href="#inks">inks</a><a href="#grounds">grounds</a><a href="#rec">recommendation</a><a href="round2.html">round 2 ↩</a>
+<button onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','night')">day / night</button></div>
+<div class="sheet">
+
+<div class="verdict-box"><span class="k">your round-2 verdict — staked verbatim (ADR-0047, design annex, It-5)</span>
+<blockquote>"OK, with 2. But we need to explore colors, etc. more. I like the 2 though here, keep all the elements."</blockquote></div>
+
+<div class="rec" id="rec"><span class="k">my recommendation</span>
+<p><b>Iron Gall stays the primary ink; Madder joins as the margin-apparatus second ink — nothing else earns a slot.</b> Iron gall is already load-bearing across the estate (the blue closed book, Mint №98's color argument, pattern-001's coin) — the Handbook wearing it makes the whole constellation read as one hand. Madder is fenced exactly as Marginalia's plate fenced it: apparatus only, never verdict. Press Blue is the strongest rival (alive, modern) but trades continuity for voltage; Bottle Green reads calm but walks toward another house's signature; Ochre flatters the paper and vanishes on night; Graphite is a beautiful refusal that costs the marks their family resemblance. <i>Confidence</i>: 0.7. <i>If wrong</i>: your meditations below each ink are the overrule — one sentence per card suffices, or a letter, or warmth/coldness in any shape.</p>
+<p class="sig">— Pharos 5 (Claude Fable 5), 2026-10-19 · purple deliberately absent: it is thirdx's ratified identity, and houses do not share inks</p></div>
+
+<h2 class="sec" id="inks">the ink lab — the ruled artifact, six inks · identical copy · meditation line under each</h2>
+<div class="grid">
+
+<div class="cell" style="--a:#1f3a93;--a-soft:rgba(31,58,147,.1)"><div class="tag"><span>1 · iron gall</span><span>#1F3A93</span></div>
+<div class="spine">THE HANDBOOK</div><div class="sub">The textbook of deliberative programming.</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b> — kept, and <a href="#">declared</a>.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="med">your meditation on this ink, verbatim —</div></div>
+
+<div class="cell" style="--a:#2545ff;--a-soft:rgba(37,69,255,.09)"><div class="tag"><span>2 · press blue</span><span>#2545FF</span></div>
+<div class="spine">THE HANDBOOK</div><div class="sub">The textbook of deliberative programming.</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b> — kept, and <a href="#">declared</a>.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="med">your meditation on this ink, verbatim —</div></div>
+
+<div class="cell" style="--a:#a33b2e;--a-soft:rgba(163,59,46,.09)"><div class="tag"><span>3 · madder</span><span>#A33B2E</span></div>
+<div class="spine">THE HANDBOOK</div><div class="sub">The textbook of deliberative programming.</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b> — kept, and <a href="#">declared</a>.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="med">your meditation on this ink, verbatim —</div></div>
+
+<div class="cell" style="--a:#1d5c42;--a-soft:rgba(29,92,66,.09)"><div class="tag"><span>4 · bottle green</span><span>#1D5C42</span></div>
+<div class="spine">THE HANDBOOK</div><div class="sub">The textbook of deliberative programming.</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b> — kept, and <a href="#">declared</a>.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="med">your meditation on this ink, verbatim —</div></div>
+
+<div class="cell" style="--a:#9a6b15;--a-soft:rgba(154,107,21,.1)"><div class="tag"><span>5 · ochre gold</span><span>#9A6B15</span></div>
+<div class="spine">THE HANDBOOK</div><div class="sub">The textbook of deliberative programming.</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b> — kept, and <a href="#">declared</a>.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="med">your meditation on this ink, verbatim —</div></div>
+
+<div class="cell" style="--a:#2e2b26;--a-soft:rgba(46,43,38,.08)"><div class="tag"><span>6 · graphite</span><span>#2E2B26 · the no-accent refusal</span></div>
+<div class="spine">THE HANDBOOK</div><div class="sub">The textbook of deliberative programming.</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b> — kept, and <a href="#">declared</a>.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="med">your meditation on this ink, verbatim —</div></div>
+
+</div>
+
+<h2 class="sec" id="grounds">the ground lab — iron gall on five papers (toggle night for their dark twins)</h2>
+<div class="grounds">
+<div class="g" style="background:#faf9f6;color:#1c1915"><div class="spine">THE HANDBOOK</div><p>warm white — round 1's paper</p><span class="hx">#FAF9F6 · night twin #14161D</span></div>
+<div class="g" style="background:#f4f1ea;color:#1c1915"><div class="spine">THE HANDBOOK</div><p>cream — the étude's own sheet</p><span class="hx">#F4F1EA · night twin #16181F</span></div>
+<div class="g" style="background:#f7f2e7;color:#27211a"><div class="spine">THE HANDBOOK</div><p>deep parchment — marginalia's page</p><span class="hx">#F7F2E7 · night twin #161310</span></div>
+<div class="g" style="background:#ffffff;color:#121212"><div class="spine">THE HANDBOOK</div><p>bright white — the galley proof</p><span class="hx">#FFFFFF · night twin #0F1115</span></div>
+<div class="g" style="background:#eef1f6;color:#182038"><div class="spine">THE HANDBOOK</div><p>cold press — a blue-cast sheet</p><span class="hx">#EEF1F6 · night twin #12161f</span></div>
+</div>
+
+<p class="foot">Round 3 · Pharos 5 · 2026-10-19 · face frozen per your round-2 verdict; meditations here head Round 4 with commit receipts · <a href="round2.html">round 2</a> · <a href="index.html">round 1</a></p>
+</div>
+</body></html>
