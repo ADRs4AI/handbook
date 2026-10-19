@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Handbook étude — Round 2 · the TX-02 face lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=Archivo:wght@600;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Oblique.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+/* TX-02 Berkeley Mono — LT-02 Developer Font License № PQW5-83L6-6VW1-MKMN (the founder's, 2026-10-19). */
+:root{--paper:#f4f1ea;--ink:#1c1915;--mut:#6f6a5d;--rule:#ddd6c6;--card:#fffdf8;--gall:#1f3a93;--gall-soft:#e8edf8;--tx:'Berkeley Mono',ui-monospace,monospace}
+[data-theme=night]{--paper:#14161d;--ink:#e8e6df;--mut:#9aa0ad;--rule:#2b2f3a;--card:#1a1d26;--gall:#8fa4e8;--gall-soft:#1d2435}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 'Source Serif 4',Georgia,serif;transition:background .25s,color .25s}
+.mast{background:#17140f;color:#f3efe6;text-align:center;padding:2.6rem 1.25rem 1.6rem}
+[data-theme=night] .mast{background:#0b0d12}
+.mast h1{margin:0;font-family:var(--tx);font-weight:700;font-size:2rem;letter-spacing:.01em}
+.mast p{margin:.5rem 0 0;color:#bdb5a4;font-size:.9rem}
+.nav{position:sticky;top:0;z-index:9;background:#221e17;display:flex;justify-content:center;gap:.2rem;flex-wrap:wrap;padding:.4rem 1rem}
+[data-theme=night] .nav{background:#11131a}
+.nav a{color:#cfc7b4;text-decoration:none;font-family:var(--tx);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;padding:.55rem .9rem}
+.nav a:hover{color:#fff}
+.nav button{margin-left:1rem;background:none;border:1px solid #555;border-radius:999px;color:#cfc7b4;font-family:var(--tx);font-size:.72rem;padding:.3rem .9rem;cursor:pointer}
+.sheet{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 5rem}
+.rec{border-left:4px solid var(--gall);background:var(--gall-soft);border-radius:0 10px 10px 0;padding:1.1rem 1.4rem;margin:0 0 1rem}
+.rec .k{font-family:var(--tx);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gall)}
+.rec p{margin:.5rem 0}
+.rec .sig{font-style:italic;color:var(--mut);font-size:.9rem}
+.chg{border-left:4px solid #c9a227;background:rgba(201,162,39,.09);border-radius:0 10px 10px 0;padding: .7rem 1.2rem;margin:0 0 2.2rem;font-size:.88rem;color:var(--mut)}
+h2.sec{font-family:var(--tx);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--rule);padding-bottom:.4rem;margin:2.6rem 0 1.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
+.cell{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.6rem}
+.cell .tag{display:flex;justify-content:space-between;font-family:var(--tx);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gall)}
+.cell .spine{margin:.2rem 0 .1rem}
+.cell .tgl{font-size:.95rem;line-height:1.5}
+.cell .code{font-family:var(--tx);font-size:.78rem;background:rgba(127,127,127,.12);padding:.5rem .7rem;border-radius:6px;overflow-x:auto;white-space:nowrap}
+.cell .verdict{font-size:.82rem;color:var(--mut);border-top:1px dashed var(--rule);padding-top:.5rem;margin-top:auto}
+/* the four pairings */
+.p-base .spine{font-family:'Source Serif 4',serif;font-variant-caps:small-caps;letter-spacing:.07em;font-weight:600;font-size:1.7rem;color:var(--gall)}
+.p-base .tgl{font-family:'Source Serif 4',serif}
+.p-ttl .spine{font-family:var(--tx);font-weight:700;font-size:1.45rem;letter-spacing:-.01em}
+.p-ttl .tgl{font-family:'Source Serif 4',serif}
+.p-body .spine{font-family:Literata,serif;font-weight:700;font-size:1.6rem}
+.p-body .tgl{font-family:var(--tx);font-size:.86rem;line-height:1.55}
+.p-full .spine{font-family:var(--tx);font-weight:700;font-size:1.4rem}
+.p-full .tgl{font-family:var(--tx);font-size:.86rem;line-height:1.55}
+.med{margin-top:2.6rem;border:1px dashed var(--gall);border-radius:10px;padding:1rem 1.2rem;background:var(--gall-soft)}
+.med .k{font-family:var(--tx);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gall)}
+.foot{margin-top:2.5rem;font-size:.82rem;color:var(--mut);border-top:1px dashed var(--rule);padding-top:.7rem}
+.foot a{color:var(--gall)}
+</style>
+</head>
+<body>
+<div class="mast"><h1>THE HANDBOOK — ROUND 2</h1><p>the TX-02 face lab · one page, side by side, per the wishful-watchful standard and the Identity Lab's method</p></div>
+<div class="nav">
+  <a href="#lab">face lab</a><a href="#rec">recommendation</a><a href="#med">meditations</a><a href="index.html">round 1 ↩</a>
+  <button onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','night')">day / night</button>
+</div>
+<div class="sheet">
+
+<div class="rec" id="rec"><span class="k">my recommendation — read after you've looked, or never</span>
+<p><b>TX-02 for titles, over Archivo, inside a Galley-evolution — body stays serif.</b> In the title slot TX-02 scales up what the folios already proved: a spine you recognize across a room, engineering-honest, unmistakably this estate (cell 2). In the body slot it is legible but relentless — a textbook page of mono taxes exactly the long-form warmth the Handbook's mission needs (cell 3's own paragraph is the evidence; read sixty seconds of it). Full TX-02 (cell 4) is a real identity — call it the terminal press — and the right skin for a tool's manual; the flagship textbook wants more warmth. <i>Confidence</i>: 0.65. <i>If wrong</i>: your eye on cell 3 or 4 overrules me in one sentence — and the all-TX plate gets built as a full treatment the same hour.</p>
+<p class="sig">— Pharos 5 (Claude Fable 5), after looking at ww-v4 and thirdx rounds 4–5, 2026-10-19</p></div>
+
+<div class="chg"><b>round 2 answers round 1's gaps</b> (caught by the founder): TX-02 now auditions in the <b>title</b> and <b>body</b> slots, not just mono · comparison is one page, side by side (the triptych discipline) · recommendation card leads · meditation slot wired. Round-1 plates remain live for the three world-palettes.</div>
+
+<h2 class="sec" id="lab">the face lab — same artifact, four pairings · identical copy</h2>
+<div class="grid">
+
+<div class="cell p-base"><div class="tag"><span>1 · baseline</span><span>SS4 titles · SS4 body</span></div>
+<div class="spine">The Handbook</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b>: the project is telling you its deliberations are valuable enough to keep — and honest enough to say so.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="verdict">Round 1's Iron Gall pairing — the quiet press; the control.</div></div>
+
+<div class="cell p-ttl"><div class="tag"><span>2 · tx-02 titles</span><span>TX-02 titles · SS4 body</span></div>
+<div class="spine">THE HANDBOOK</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b>: the project is telling you its deliberations are valuable enough to keep — and honest enough to say so.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="verdict">The folio energy, scaled up: engineering-honest spine over book-warm text. My pick.</div></div>
+
+<div class="cell p-body"><div class="tag"><span>3 · tx-02 body</span><span>Literata titles · TX-02 body</span></div>
+<div class="spine">The Handbook</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b>: the project is telling you its deliberations are valuable enough to keep — and honest enough to say so.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="verdict">Readable — and relentless at chapter length. Read this cell for sixty seconds; that is the argument.</div></div>
+
+<div class="cell p-full"><div class="tag"><span>4 · full tx-02</span><span>the terminal press</span></div>
+<div class="spine">THE HANDBOOK</div>
+<div class="tgl">A closed record is <b>a statement of worth, not an apology</b>: the project is telling you its deliberations are valuable enough to keep — and honest enough to say so.</div>
+<div class="code">grep -rn '^### QST' docs/adr/</div>
+<div class="verdict">A real identity — U.S. Graphics proves it lives. Right for a tool's manual; the flagship wants more warmth.</div></div>
+
+</div>
+
+<div class="med" id="med"><span class="k">your meditations — verbatim, any shape</span>
+<p style="margin:.5rem 0 0">They stake into the record with a commit receipt and head Round 3, the way your round-3 verdicts headed thirdx's round 4.</p></div>
+
+<p class="foot">Round 2 · Pharos 5 · 2026-10-19 · TX-02 Berkeley Mono under LT-02 Developer License № PQW5-83L6-6VW1-MKMN (the founder's) · <a href="index.html">round 1: the three worlds</a> — Iron Gall · Galley · Marginalia carry the palette question; this page carries the face question.</p>
+</div>
+</body></html>
