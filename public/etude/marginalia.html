@@ -1,11 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mono>
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>C · Marginalia — Handbook étude</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Oblique.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+/* TX-02 Berkeley Mono -- LT-02 Developer Font License No PQW5-83L6-6VW1-MKMN (the founder's, 2026-10-19). Candidate: the series' code-and-command voice. */
+:root{--mono:ui-monospace,Menlo,monospace}
+[data-mono]{--mono:'Berkeley Mono',ui-monospace,Menlo,monospace}
 :root{--paper:#f7f2e7;--ink:#27211a;--mut:#7a6f5e;--rule:#e0d7c4;--rubric:#a33b2e;--gall:#1f3a93;--code:#efe9db}
 [data-theme=night]{--paper:#161310;--ink:#ece5d8;--mut:#a39781;--rule:#332c23;--rubric:#d98a76;--gall:#8fa4e8;--code:#201b15}
 body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 Literata,Georgia,serif;transition:background .25s,color .25s}
@@ -22,7 +28,7 @@ h2{font-size:1.55rem;margin:0 0 1rem}
 ul.marks{list-style:none;padding:0;margin:1.2rem 0}
 ul.marks li{display:flex;gap:.6rem;align-items:baseline;margin:.55rem 0}
 .glyph{flex:0 0 auto;font-size:1.2em}
-code,pre{font-family:ui-monospace,Menlo,monospace;font-size:.84em;background:var(--code);border-radius:6px}
+code,pre{font-family:var(--mono);font-size:.84em;background:var(--code);border-radius:6px}
 pre{padding:.9rem 1.1rem;overflow-x:auto}
 code{padding:.1em .35em}
 .margin{border-left:1px solid var(--rule);padding-left:1.3rem;font-size:.85rem;color:var(--mut)}
@@ -34,7 +40,7 @@ code{padding:.1em .35em}
 </style>
 </head>
 <body>
-<div class="crumb"><a href="index.html">← étude</a> round 1 · C · marginalia — the annotated book <button class="toggle" onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','night')">day / night</button></div>
+<div class="crumb"><a href="index.html">← étude</a> round 1 · C · marginalia — the annotated book <button class="toggle" onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','night')">day / night</button> <button class="toggle" onclick="document.documentElement.toggleAttribute('data-mono')">mono: TX-02 ⇄ system</button></div>
 <div class="spine"><h1>The <span class="amp">Handbook</span></h1><p>The textbook of deliberative programming — grown one answered confusion at a time.</p></div>
 <div class="book">
 <main>

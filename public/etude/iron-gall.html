@@ -1,11 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mono>
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>A · Iron Gall — Handbook étude</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Oblique.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Berkeley Mono';src:url('fonts/BerkeleyMono-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+/* TX-02 Berkeley Mono -- LT-02 Developer Font License No PQW5-83L6-6VW1-MKMN (the founder's, 2026-10-19). Candidate: the series' code-and-command voice. */
+:root{--mono:ui-monospace,Menlo,monospace}
+[data-mono]{--mono:'Berkeley Mono',ui-monospace,Menlo,monospace}
 :root{--paper:#faf9f6;--ink:#1c1a16;--mut:#6f6a5d;--rule:#e2ddd0;--gall:#1f3a93;--gall-soft:#e8edf8;--code:#f1efe8}
 [data-theme=night]{--paper:#14161d;--ink:#e8e6df;--mut:#9aa0ad;--rule:#2b2f3a;--gall:#8fa4e8;--gall-soft:#1d2435;--code:#1b1e27}
 body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 'Source Serif 4',Georgia,serif;transition:background .25s,color .25s}
@@ -20,7 +26,7 @@ h2{font-size:1.6rem;margin:0 0 1rem}
 ul.marks{list-style:none;padding:0;margin:1.2rem 0}
 ul.marks li{display:flex;gap:.6rem;align-items:baseline;margin:.55rem 0}
 .glyph{flex:0 0 auto;font-size:1.2em}
-code,pre{font-family:ui-monospace,Menlo,monospace;font-size:.85em;background:var(--code);border-radius:6px}
+code,pre{font-family:var(--mono);font-size:.85em;background:var(--code);border-radius:6px}
 pre{padding: .9rem 1.1rem;overflow-x:auto}
 code{padding:.1em .35em}
 .colophon{margin-top:3rem;padding-top:.8rem;border-top:1px dashed var(--rule);font-size:.9rem;color:var(--mut)}
@@ -30,7 +36,7 @@ code{padding:.1em .35em}
 </style>
 </head>
 <body>
-<div class="crumb"><a href="index.html">← étude</a> round 1 · A · iron gall — the record's own ink <button class="toggle" onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','night')">day / night</button></div>
+<div class="crumb"><a href="index.html">← étude</a> round 1 · A · iron gall — the record's own ink <button class="toggle" onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','night')">day / night</button> <button class="toggle" onclick="document.documentElement.toggleAttribute('data-mono')">mono: TX-02 ⇄ system</button></div>
 <div class="spine"><h1>The Handbook</h1><p>The textbook of deliberative programming — grown one answered confusion at a time.</p></div>
 <main>
 <h2>The marks</h2>
