@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C · Marginalia — Handbook étude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f2e7;--ink:#27211a;--mut:#7a6f5e;--rule:#e0d7c4;--rubric:#a33b2e;--gall:#1f3a93;--code:#efe9db}
+[data-theme=night]{--paper:#161310;--ink:#ece5d8;--mut:#a39781;--rule:#332c23;--rubric:#d98a76;--gall:#8fa4e8;--code:#201b15}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 Literata,Georgia,serif;transition:background .25s,color .25s}
+.crumb{font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);padding:1rem 1.25rem;display:flex;gap:1rem;align-items:center}
+.crumb a{color:var(--gall);text-decoration:none}
+.toggle{margin-left:auto;background:none;border:1px solid var(--rule);border-radius:999px;color:var(--ink);padding:.3rem .9rem;font:inherit;font-size:.78rem;cursor:pointer}
+.spine{text-align:center;padding:2.6rem 1.25rem 2rem;border-bottom:1px solid var(--rule)}
+.spine h1{margin:0;font-weight:700;font-size:2.7rem;letter-spacing:.01em}
+.spine h1 .amp{color:var(--rubric);font-style:italic}
+.spine p{margin:.5rem 0 0;font-style:italic;color:var(--mut)}
+.book{max-width:58rem;margin:0 auto;padding:2.5rem 1.25rem 4rem;display:grid;grid-template-columns:minmax(0,40rem) 14rem;gap:2.2rem}
+@media (max-width:900px){.book{grid-template-columns:minmax(0,1fr)}.margin{border-left:none;border-top:1px solid var(--rule);padding:1rem 0 0;margin-top:1.5rem}}
+h2{font-size:1.55rem;margin:0 0 1rem}
+ul.marks{list-style:none;padding:0;margin:1.2rem 0}
+ul.marks li{display:flex;gap:.6rem;align-items:baseline;margin:.55rem 0}
+.glyph{flex:0 0 auto;font-size:1.2em}
+code,pre{font-family:ui-monospace,Menlo,monospace;font-size:.84em;background:var(--code);border-radius:6px}
+pre{padding:.9rem 1.1rem;overflow-x:auto}
+code{padding:.1em .35em}
+.margin{border-left:1px solid var(--rule);padding-left:1.3rem;font-size:.85rem;color:var(--mut)}
+.margin .m{margin:0 0 1.4rem}
+.margin .lbl{display:block;color:var(--rubric);font-variant-caps:small-caps;letter-spacing:.06em;font-size:.8rem;margin-bottom:.15rem}
+.margin a{color:var(--gall)}
+.meditations{grid-column:1 / -1;border:1px dashed var(--rubric);border-radius:10px;padding:1rem 1.2rem;font-size:.95rem}
+.meditations b{font-variant-caps:small-caps;letter-spacing:.04em;color:var(--rubric)}
+</style>
+</head>
+<body>
+<div class="crumb"><a href="index.html">← étude</a> round 1 · C · marginalia — the annotated book <button class="toggle" onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','night')">day / night</button></div>
+<div class="spine"><h1>The <span class="amp">Handbook</span></h1><p>The textbook of deliberative programming — grown one answered confusion at a time.</p></div>
+<div class="book">
+<main>
+<h2>The marks</h2>
+<p>Projects practicing the methodology declare what happens to their <b>deliberation record</b> — and the declaration has three honest states:</p>
+<ul class="marks">
+<li><span class="glyph">📖</span><span><b>Open Deliberations</b> — the record ships with the code</span></li>
+<li><span class="glyph">📘</span><span><b>Closed Deliberations</b> — a record exists and is declared; kept, not hidden</span></li>
+<li><span class="glyph">📑</span><span><b>Digest</b> — model-written summaries ship; the record is kept</span></li>
+</ul>
+<p>The one people trip on is 📘. A closed record is <b>a statement of worth, not an apology</b>: the project is telling you its deliberations are valuable enough to keep — and honest enough to say so. Hiding that a record exists would be a different (and worse) choice; the mark exists precisely so keeping and disclosing can both be features.</p>
+<p>The closed book is <b>blue</b> on purpose: The record's own ink, not a warning color. A status mark that pleaded guilty would re-apologize the thing the whole practice refuses to apologize for.</p>
+<pre><code>grep -rn '^### QST' docs/adr/</code></pre>
+</main>
+<aside class="margin">
+<p class="m"><span class="lbl">born of</span>the <a href="https://github.com/ADRs4AI/awesome-adrs4ai">awesome-adrs4ai</a> legend — where strangers first meet the marks.</p>
+<p class="m"><span class="lbl">see also</span><a href="https://adrs.systems/handbook/start-here/">Start here</a> — the loop in one breath.</p>
+<p class="m"><span class="lbl">rubric law</span>this red belongs to the margin apparatus only — never to a status, never to a verdict.</p>
+</aside>
+<div class="meditations"><b>meditations</b> — this slot receives your verbatim, in any shape; rulings transcribe to the design annex.</div>
+</div>
+</body></html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A · Iron Gall — Handbook étude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf9f6;--ink:#1c1a16;--mut:#6f6a5d;--rule:#e2ddd0;--gall:#1f3a93;--gall-soft:#e8edf8;--code:#f1efe8}
+[data-theme=night]{--paper:#14161d;--ink:#e8e6df;--mut:#9aa0ad;--rule:#2b2f3a;--gall:#8fa4e8;--gall-soft:#1d2435;--code:#1b1e27}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 'Source Serif 4',Georgia,serif;transition:background .25s,color .25s}
+.crumb{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);padding:1rem 1.25rem;display:flex;gap:1rem;align-items:center}
+.crumb a{color:var(--gall);text-decoration:none}
+.toggle{margin-left:auto;background:none;border:1px solid var(--rule);border-radius:999px;color:var(--ink);padding:.3rem .9rem;font:inherit;font-size:.8rem;cursor:pointer}
+.spine{border-top:3px solid var(--gall);border-bottom:1px solid var(--rule);padding:2.6rem 1.25rem 2.2rem;text-align:center}
+.spine h1{margin:0;font-variant-caps:small-caps;letter-spacing:.08em;font-weight:600;font-size:2.6rem;color:var(--gall)}
+.spine p{margin:.5rem 0 0;font-style:italic;color:var(--mut)}
+main{max-width:42rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h2{font-size:1.6rem;margin:0 0 1rem}
+ul.marks{list-style:none;padding:0;margin:1.2rem 0}
+ul.marks li{display:flex;gap:.6rem;align-items:baseline;margin:.55rem 0}
+.glyph{flex:0 0 auto;font-size:1.2em}
+code,pre{font-family:ui-monospace,Menlo,monospace;font-size:.85em;background:var(--code);border-radius:6px}
+pre{padding: .9rem 1.1rem;overflow-x:auto}
+code{padding:.1em .35em}
+.colophon{margin-top:3rem;padding-top:.8rem;border-top:1px dashed var(--rule);font-size:.9rem;color:var(--mut)}
+.colophon a{color:var(--gall)}
+.meditations{margin-top:3rem;border:1px dashed var(--gall);border-radius:10px;padding:1rem 1.2rem;background:var(--gall-soft);font-size:.95rem}
+.meditations b{font-variant-caps:small-caps;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="crumb"><a href="index.html">← étude</a> round 1 · A · iron gall — the record's own ink <button class="toggle" onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','night')">day / night</button></div>
+<div class="spine"><h1>The Handbook</h1><p>The textbook of deliberative programming — grown one answered confusion at a time.</p></div>
+<main>
+<h2>The marks</h2>
+<p>Projects practicing the methodology declare what happens to their <b>deliberation record</b> — and the declaration has three honest states:</p>
+<ul class="marks">
+<li><span class="glyph">📖</span><span><b>Open Deliberations</b> — the record ships with the code</span></li>
+<li><span class="glyph">📘</span><span><b>Closed Deliberations</b> — a record exists and is declared; kept, not hidden</span></li>
+<li><span class="glyph">📑</span><span><b>Digest</b> — model-written summaries ship; the record is kept</span></li>
+</ul>
+<p>The one people trip on is 📘. A closed record is <b>a statement of worth, not an apology</b>: the project is telling you its deliberations are valuable enough to keep — and honest enough to say so. Hiding that a record exists would be a different (and worse) choice; the mark exists precisely so keeping and disclosing can both be features.</p>
+<p>The closed book is <b>blue</b> on purpose: The record's own ink, not a warning color. A status mark that pleaded guilty would re-apologize the thing the whole practice refuses to apologize for.</p>
+<pre><code>grep -rn '^### QST' docs/adr/</code></pre>
+<p class="colophon">This page was born of the <a href="https://github.com/ADRs4AI/awesome-adrs4ai">awesome-adrs4ai</a> list's legend — the first surface where strangers meet the marks.</p>
+<div class="meditations"><b>meditations</b> — this slot receives your verbatim, in any shape; rulings transcribe to the design annex.</div>
+</main>
+</body></html>

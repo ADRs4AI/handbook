@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B · Galley — Handbook étude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#ffffff;--ink:#121212;--mut:#5c5c5c;--rule:#dcdcdc;--press:#2545ff;--press-soft:#eceeff;--code:#f4f4f4}
+[data-theme=night]{--paper:#0f1115;--ink:#ececec;--mut:#9a9a9a;--rule:#2a2d33;--press:#7d93ff;--press-soft:#1a1f33;--code:#171a20}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 'Source Serif 4',Georgia,serif;transition:background .25s,color .25s}
+.crumb{font-family:Archivo,sans-serif;font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);padding:1rem 1.25rem;display:flex;gap:1rem;align-items:center}
+.crumb a{color:var(--press);text-decoration:none}
+.toggle{margin-left:auto;background:none;border:1px solid var(--rule);border-radius:0;color:var(--ink);padding:.3rem .9rem;font-family:Archivo,sans-serif;font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}
+.spine{padding:2.8rem 1.25rem 2rem;border-bottom:4px solid var(--ink)}
+.spine .folio{font-family:ui-monospace,Menlo,monospace;font-size:.75rem;letter-spacing:.12em;color:var(--press);text-transform:uppercase}
+.spine h1{margin:.2rem 0 0;font-family:Archivo,sans-serif;font-weight:800;font-size:3.2rem;letter-spacing:-.02em;line-height:1;text-transform:uppercase}
+.spine p{margin:.8rem 0 0;color:var(--mut);max-width:34rem}
+main{max-width:42rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h2{font-family:Archivo,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.01em;font-size:1.3rem;margin:0 0 1rem;border-left:6px solid var(--press);padding-left:.6rem}
+ul.marks{list-style:none;padding:0;margin:1.2rem 0}
+ul.marks li{display:flex;gap:.6rem;align-items:baseline;margin:.55rem 0}
+.glyph{flex:0 0 auto;font-size:1.2em}
+code,pre{font-family:ui-monospace,Menlo,monospace;font-size:.85em;background:var(--code)}
+pre{padding:.9rem 1.1rem;overflow-x:auto;border-left:6px solid var(--ink)}
+code{padding:.1em .35em}
+.colophon{margin-top:3rem;padding:.8rem 0 0;border-top:2px solid var(--ink);font-family:ui-monospace,Menlo,monospace;font-size:.78rem;color:var(--mut)}
+.colophon a{color:var(--press)}
+.meditations{margin-top:3rem;border:2px solid var(--press);padding:1rem 1.2rem;background:var(--press-soft);font-size:.95rem}
+.meditations b{font-family:Archivo,sans-serif;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em}
+</style>
+</head>
+<body>
+<div class="crumb"><a href="index.html">← étude</a> round 1 · B · galley — the working print-shop <button class="toggle" onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme','night')">day / night</button></div>
+<div class="spine"><span class="folio">adrs4ai · textbook · proof nº1</span><h1>The Handbook</h1><p>The textbook of deliberative programming — grown one answered confusion at a time.</p></div>
+<main>
+<h2>The marks</h2>
+<p>Projects practicing the methodology declare what happens to their <b>deliberation record</b> — and the declaration has three honest states:</p>
+<ul class="marks">
+<li><span class="glyph">📖</span><span><b>Open Deliberations</b> — the record ships with the code</span></li>
+<li><span class="glyph">📘</span><span><b>Closed Deliberations</b> — a record exists and is declared; kept, not hidden</span></li>
+<li><span class="glyph">📑</span><span><b>Digest</b> — model-written summaries ship; the record is kept</span></li>
+</ul>
+<p>The one people trip on is 📘. A closed record is <b>a statement of worth, not an apology</b>: the project is telling you its deliberations are valuable enough to keep — and honest enough to say so. Hiding that a record exists would be a different (and worse) choice; the mark exists precisely so keeping and disclosing can both be features.</p>
+<p>The closed book is <b>blue</b> on purpose: The record's own ink, not a warning color. A status mark that pleaded guilty would re-apologize the thing the whole practice refuses to apologize for.</p>
+<pre><code>grep -rn '^### QST' docs/adr/</code></pre>
+<p class="colophon">BORN_OF → <a href="https://github.com/ADRs4AI/awesome-adrs4ai">awesome-adrs4ai</a> · the list's legend, where strangers first meet the marks.</p>
+<div class="meditations"><b>meditations</b> — this slot receives your verbatim, in any shape; rulings transcribe to the design annex.</div>
+</main>
+</body></html>
