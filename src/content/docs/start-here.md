@@ -5,8 +5,7 @@ description: One real decision, walked end to end — what deliberative programm
 
 Jérémie told his AI, in one sitting, something that was not a spec and not a
 ticket: he wanted real docsites for this project, and the handbook — the
-most visible one — needed a dedicated, fast-moving team, the way the
-extension already has one for its own intake.
+most visible one — needed a dedicated, fast-moving team of its own.
 
 That's it.
 
