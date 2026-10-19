@@ -1,0 +1,40 @@
+/* quire — the series' shared sheet (working name per Mint №97: a quire is the
+   gathered sheets from which books are bound; the name docket settles at
+   theme-package extraction). v0 tokens: the record's ink on honest paper.
+   Series law: these custom properties ARE the identity — sites restyle by
+   token, never by fork. */
+
+:root {
+  /* Accent: iron-gall ink — the keeping-house blue the estate already writes
+     records in (the 📘 of the marks, the blue of pattern-001's book). */
+  --sl-color-accent-low: #d6ddf4;
+  --sl-color-accent: #2c4d9e;
+  --sl-color-accent-high: #1f3a93;
+  /* Paper: warm off-white, not gallery white. */
+  --sl-color-bg: #faf9f6;
+  --quire-rule: #e4e1d8;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #1c2a55;
+  --sl-color-accent: #7f9ae0;
+  --sl-color-accent-high: #aebdf0;
+  --sl-color-bg: #16181f;
+  --quire-rule: #2c3040;
+}
+
+/* The spine: site title wears small caps — the press mark of the series. */
+.site-title {
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+}
+
+/* Provenance block — pages that declare born_of render their origin as a
+   quiet colophon line, not a banner. */
+.born-of {
+  margin-top: 3rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--quire-rule);
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+}

@@ -1,0 +1,36 @@
+---
+title: The Handbook
+description: The ADRs4AI textbook — deliberative programming, explained the way real confusions asked for it.
+template: splash
+hero:
+  tagline: The textbook of deliberative programming — grown one answered confusion at a time.
+  actions:
+    - text: Start here
+      link: /handbook/start-here/
+      icon: right-arrow
+    - text: The toolkit
+      link: https://adrs.systems
+      variant: minimal
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="A textbook, not a reference dump" icon="open-book">
+    Every page here exists because someone was genuinely confused and asked.
+    Pages carry their origin — the Discussion, issue, or question that birthed
+    them — so the book grows exactly where it proved thin.
+  </Card>
+  <Card title="Written for two readers" icon="seti:markdown">
+    Every page ships twice: as this site, and as plain markdown at the same
+    address with `.md` — plus [llms.txt](/handbook/llms.txt) for model readers.
+    The documentation practices what the methodology preaches.
+  </Card>
+  <Card title="The record does the remembering" icon="document">
+    Decisions live in Architectural Deliberation Records — asked, recommended,
+    ruled, and kept. This book teaches the practice; the
+    [template](https://github.com/ADRs4AI/human-ai-collaboration-template-A)
+    gives you the working apparatus.
+  </Card>
+</CardGrid>
