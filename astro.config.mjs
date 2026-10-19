@@ -25,6 +25,7 @@ export default defineConfig({
       sidebar: [
         { label: 'Start here', slug: 'start-here' },
         { label: 'The marks', slug: 'the-marks' },
+        { label: 'Colophon', slug: 'colophon' },
       ],
       editLink: {
         baseUrl: `${SITE.repo}/edit/main/`,
