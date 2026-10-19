@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/thirdx-kit.mjs",
+    "build": "node scripts/constraint-check.mjs && astro build && node scripts/thirdx-kit.mjs",
     "preview": "astro preview"
   },
   "keywords": [],

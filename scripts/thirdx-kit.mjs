@@ -7,14 +7,14 @@
 // via kintsugi, and its behavior is this file, readable in one screen.
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join, relative, dirname } from 'node:path';
+import CONFIG from '../site.config.mjs';
 
 const SRC = 'src/content/docs';
 const DIST = 'dist';
-const BASE = '/handbook';
-const SITE = 'https://adrs.systems';
-const TITLE = 'The Handbook';
-const SUMMARY =
-  'The ADRs4AI textbook: deliberative programming — decisions as first-class, durable artifacts of human-AI collaboration. Each page may carry born_of: the public confusion that birthed it.';
+const BASE = CONFIG.base;
+const SITE = CONFIG.site;
+const TITLE = CONFIG.title;
+const SUMMARY = CONFIG.summary;
 
 async function* walk(dir) {
   for (const e of await readdir(dir, { withFileTypes: true })) {

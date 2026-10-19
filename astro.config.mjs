@@ -1,20 +1,23 @@
 // The Handbook — ADR-0047 pilot (ADRs4AI HQ docs/adr/0047, all QSTs ruled).
 // Base: Astro Starlight. Engraved constraint (QST-DOCS-BASE ANS): custom UI is
-// Vue and/or Vue-with-scoped-CSS ONLY — no React, no Tailwind. The theme
+// Vue and/or Vue-with-scoped-CSS ONLY — no React, no Tailwind (enforced by
+// scripts/constraint-check.mjs, first step of `npm run build`). The theme
 // package (quire docket, Mint №97) starts life as src/styles/quire.css and
 // extracts to its own kintsugi-tended package when site #2 exists.
+// Identity facts (site/base/title/summary/repo) live in site.config.mjs —
+// one source, three consumers; edit them THERE.
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import vue from '@astrojs/vue';
+import SITE from './site.config.mjs';
 
 export default defineConfig({
-  site: 'https://adrs.systems',
-  base: '/handbook',
+  site: SITE.site,
+  base: SITE.base,
   integrations: [
     starlight({
-      title: 'The Handbook',
-      description:
-        'The ADRs4AI textbook: deliberative programming, explained the way real confusions asked for it.',
+      title: SITE.title,
+      description: SITE.summary,
       customCss: ['./src/styles/quire.css'],
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/ADRs4AI' },
@@ -24,9 +27,7 @@ export default defineConfig({
         { label: 'The marks', slug: 'the-marks' },
       ],
       editLink: {
-        // Repo URL lands when QST-HANDBOOK-GO births it; placeholder keeps the
-        // affordance visible in dev and is replaced before first deploy.
-        baseUrl: 'https://github.com/ADRs4AI/handbook/edit/main/',
+        baseUrl: `${SITE.repo}/edit/main/`,
       },
     }),
     vue(),
