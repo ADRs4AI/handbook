@@ -1,7 +1,7 @@
 {
   "name": "handbook",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Handbook \u2014 the ADRs4AI textbook of deliberative programming",
   "main": "index.js",
   "scripts": {
     "dev": "astro dev",
@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "dependencies": {
     "@astrojs/starlight": "^0.42.6",
     "@astrojs/vue": "^7.0.3",
