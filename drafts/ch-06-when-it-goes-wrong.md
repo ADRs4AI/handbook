@@ -9,7 +9,7 @@ the answer slot says `[Fill this in]`. Nothing is lost — but something went
 wrong, and this chapter is the map of the ways that happens.
 
 The comfort first, because it's structural: in this practice, failures are
-*visible*. A broken record looks broken. That is the entire design — the
+*visible*. A broken record looks broken. That is by design — the
 alternative, thinking that evaporates silently, never looks like anything
 at all.
 
@@ -68,7 +68,7 @@ yesterday's — models get updated, substituted, rerouted. In most workflows
 that's a catastrophe. Here it is a Tuesday: **the record holds, minds
 change, and the work resumes either way.** The new mind reads the same
 ADRs, the same seeds, the same open questions, and continues — which is
-not a workaround. It is the reason the record exists.
+not a workaround. It is part of why the record exists.
 
 ## When an answer didn't land
 
